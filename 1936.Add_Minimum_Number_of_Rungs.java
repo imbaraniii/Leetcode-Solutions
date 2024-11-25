@@ -12,7 +12,8 @@ class Solution {
     public int addRungs(int[] rungs, int dist) {
         int extra_lad = 0;  // Count the extra ladders needed
         int current_height = 0; // Track the current height
-
+	
+	// O(n)
         for (int i=0; i<rungs.length; i++) {
             int dist_diff = rungs[i] - current_height; // Find the height difference between the current height and the next ladder
 
@@ -36,5 +37,8 @@ class Solution {
 
     
 }
+
+// Time Complexity - O(n)
+// Beats 100% - 1 ms
 
 
