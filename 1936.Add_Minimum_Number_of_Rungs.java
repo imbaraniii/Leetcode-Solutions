@@ -1,3 +1,13 @@
+// class Main {
+//     public static void main (String[] args) {
+//         int[] rungs = {3, 6, 8, 10};
+//         int dist = 1;
+//         Solution sol = new Solution();
+//         System.out.println(sol.addRungs(rungs, dist));
+//     }
+
+// }
+
 class Solution {
     public int addRungs(int[] rungs, int dist) {
         int extra_lad = 0;  // Count the extra ladders needed
@@ -26,3 +36,5 @@ class Solution {
 
     
 }
+
+
