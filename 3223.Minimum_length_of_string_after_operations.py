@@ -14,27 +14,22 @@ class Solution:
     def minimumLength(self, s: str) -> int:
         freq = Counter(s) # Finding the freq of each character in s
         min_len = len(s) # Min length will be the actual length of s
-
-        b = True # Loop-breaking Variable
-        while b:
-            temp = 0 # Counts the number of characters which have freq less than 3
-            # O(n): n, number of distinct char in s
-            for key in freq:
-                if freq[key] < 3:
-                    temp += 1
-                    if temp == len(freq): # if the count == len(freq) then we can break the while loop
-                        b = False
-                        break
-
-                else:
-                    # decrement the min_len and freq[key] by 2 (one for left and one for right)
-                    min_len -= 2
-                    freq[key] -= 2
+        
+        # O(n): n, number of distinct characters in s
+        for key in freq:
+            # skip the characters which have freq less than 3
+            if freq[key] < 3:
+                continue
+            else:
+                f = (freq[key] - 3) // 2 + 1 # number of times the min_len should be decremented by 2 such that it gets less than 3
+                min_len -= (2 * f)
+                freq[key] -= (2 * f)
 
 
         return min_len
 
 # O(n)
+        
         
 
 
